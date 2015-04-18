@@ -5,13 +5,16 @@ package math
  */
 class Factorial {
 
-  def factorialNumber(num: Int) = factHelper(num, 1)
+  def factorialNumber(num: Int): Int = {
 
-  private[Factorial] def factHelper(num: Int, acc: Int): Int = {
-    if (num == 0){
-      acc
-    } else{
-      factHelper(num - 1, acc * num)
+    def factHelper(num: Int, acc: Int): Int = {
+      if (num == 0){
+        acc
+      } else{
+        factHelper(num - 1, acc * num)
+      }
     }
+
+    factHelper(num, 1)
   }
 }

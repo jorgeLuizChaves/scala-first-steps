@@ -10,7 +10,6 @@ object FileConverter {
 
 
   def convertToIOObject(file: File = new File(".")) = {
-    Option(file)
   if (file.isDirectory()){
       DirectoryObject(file)
     }else{

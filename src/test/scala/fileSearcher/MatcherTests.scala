@@ -23,7 +23,16 @@ class MatcherTests extends FlatSpec{
     val file = new File("/Users/Jorge/dev/workspace/scala/fileSearcher/testfiles")
     val matcher = new Matcher("txt", file)
     val result = matcher execute()
-    assert(result == List("test.txt"))
+    assert(result == List("dirA", "test.txt"))
+  }
+
+  "Matcher using a directory with subfolder should matching the filter" should
+    "return a list with that file name" in {
+    val file = new File("/Users/Jorge/dev/workspace/scala/fileSearcher/testfiles")
+    val checkSubFolders = true;
+    val matcher = new Matcher("pdf", file, checkSubFolders)
+    val result = matcher execute()
+    assert(result == List("example.pdf"))
   }
 
 }

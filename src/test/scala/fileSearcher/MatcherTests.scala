@@ -23,7 +23,7 @@ class MatcherTests extends FlatSpec{
     val file = new File("/Users/Jorge/dev/workspace/scala/fileSearcher/testfiles")
     val matcher = new Matcher("txt", file)
     val result = matcher execute()
-    assert(result == List())
+    assert(result == List("test.txt"))
   }
 
 }
